@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- * Styles: -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+
+            <input type="text" class="calc-numbers" value="0">
+
+            <div class="calculator-buttons">
+                <button class="btn is-clear span-1 orange operator">AC</button>
+                <button class="btn orange operator">+/-</button>
+                <button class="btn orange operator">&larr;</button>
+                <button class="btn orange operator">&divide;</button>
+
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn orange operator">x</button>
+
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn orange">-</button>
+
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn orange operator">+</button>
+
+                <button class="btn span-2">0</button>
+                <button class="btn">,</button>
+                <button class="btn orange operator">=</button>
+            </div>
+
+        </div>
+        
+        
+        <div class="other-operators">
+            <button class="btn left-operators"> ( </button>
+            <button class="btn left-operators"> ) </button>
+            <button class="btn left-operators"> mc </button>
+            <button class="btn left-operators"> m+ </button>
+            <button class="btn left-operators"> m- </button>
+            <button class="btn left-operators"> mr </button>
+            <button class="btn left-operators"> 2nd </button>
+            <button class="btn left-operators"> x2 </button>
+            <button class="btn left-operators"> x3 </button>
+            <button class="btn left-operators"> xy </button>
+            <button class="btn left-operators"> ex </button>
+            <button class="btn left-operators"> 10x </button>
+            <button class="btn left-operators"> 1/x </button>
+            <button class="btn left-operators"> &#8730; </button>
+            <button class="btn left-operators"> &#8730; </button>
+            <button class="btn left-operators"> &#8730; </button>
+            <button class="btn left-operators"> ln </button>
+            <button class="btn left-operators"> log10 </button>
+            <!-- * Unimportant operators:  -->
+            <button class="btn left-operators"> x! </button>
+            <button class="btn left-operators"> sin </button>
+            <button class="btn left-operators"> cos</button>
+            <button class="btn left-operators"> tan</button>
+            <button class="btn left-operators"> e </button>
+            <button class="btn left-operators"> EE </button>
+            <button class="btn left-operators"> Rad </button>
+            <button class="btn left-operators"> sinh </button>
+            <button class="btn left-operators"> cosh </button>
+            <button class="btn left-operators"> tanh </button>
+            <button class="btn left-operators"> pi </button>
+            <button class="btn left-operators"> Rand </button>
+        </div>
+    </div>
+
+<!-- * Theme Switchers : -->
+<footer>
+    <div class="default-switch theme">
+        <p>Default</p>
+    </div>
+
+    <div class="light-switch theme">
+        <p>Light</p>
+    </div>
+
+    <div class="dark-switch theme">
+        <p>Dark</p>
+    </div>
+
+    <div class="purple-switch theme">
+        <p>Purple</p>
+    </div>
+</footer>
+
+
+    <!-- * Webpack bundle -->
+    <script src="src/index.js"></script>
+    <script src="src/themes.js"></script>
+</body>
+</html>
