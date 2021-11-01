@@ -100,9 +100,6 @@ function flushOperation(internalBuffer){
     }
 }
 
-function double(buffer) {
-    Math.pow(parseInt(buffer), 2)
-}
 
 function rerenderScreen(){
     calcScreen.value = buffer;
