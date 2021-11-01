@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
+
+
+* {
+  box-sizing: border-box;
+}
+body {
+    background-color: rgb(38, 38, 38);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.calculator {
+    max-width: 320px;
+    background: rgb(99, 99, 99);
+}
+
+.calculator-buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border: 0;
+}
+/* ! HTML Input */
+.calc-numbers {
+    position: relative;
+    
+    background: rgb(46, 46, 46);
+    color: white;
+    
+    font-family: 'Space Mono', serif;
+    font-size: 2em;
+    text-align: right;
+    
+    height: 100px;
+    width: 47.5rem;
+
+    right: 27.5rem;
+    
+
+    border: 0;
+
+    padding: 0.3em;
+}
+
+
+.span-2{
+    grid-column: span 2;
+}
+.span-3{
+    grid-column: span 3;
+}
+
+
+.btn {
+    background-color: rgb(140, 140, 140);
+    color: #FFF;
+
+    font-size: 1.5rem;
+
+    height: 65px;
+    border:1px solid black;
+}
+    .btn:hover {
+        transition: 0.2s ease;
+        background: rgb(237, 96, 2);
+    }
+
+.orange{
+    background-color:orange;
+}
+
+
+/* ! Other Operators : */
+.other-operators {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+
+    background: #000;
+    
+    border: 0;
+
+    margin-top: 6.2rem;
+}
+.left-operators {
+    background: rgb(97, 97, 97);
+    width: 4.6rem;    
+}
+
+
+
+/* * Theme Switchers :  */
+footer {
+    position: absolute;
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    height: 4rem;
+
+    background: rgb(19, 19, 19);
+}
+/* ! Theme Switches */
+.theme {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+
+    cursor: pointer;
+
+    border: 1px solid black;
+    
+    width: 6rem;
+}
+    .default-switch {
+        background-color: orange;
+        color: rgb(19, 19, 19);
+    }
+    .light-switch {
+        background: #FFF;
+        color: #000;
+    }
+    .dark-switch {
+        background: #000;
+        color: #FFF;
+    }
+    .purple-switch {
+        color: purple;
+        background: #000;
+    }
+
+/* ! Theme Pallettes: */
+.light-theme {
+    transition: 0.2s ease;
+
+    background: #FFF;
+    color: #000;
+
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.426);
+}
+.dark-theme {
+    transition: 0.2s ease;
+    
+    background: rgb(16, 16, 16);
+    color: rgb(255, 255, 255);
+
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.426);
+}
+.purple-theme {
+    transition: 0.2s ease;
+    
+    background: rgb(14, 14, 14);
+    color: rgb(107, 12, 202);
+
+    text-shadow: 0px 0px 10px rgba(153, 14, 233, 0.522);
+}
+
+/* ! Webpack config: */
+.webpack {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+    
+}
+

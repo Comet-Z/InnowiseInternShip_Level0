@@ -4,16 +4,19 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin') 
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
     context: path.resolve(__dirname),
     output: {
         path: path.resolve(__dirname, 'dist'),
-        path2: path.resolve(__dirname, 'src'),
         filename: 'bundle.js'
     },
     module: {
         rules: [
-
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
         ]
     },
     resolve: {
@@ -22,7 +25,9 @@ module.exports = {
     devtool: 'source-map',
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Output Management',
+            title: 'Calculator',
+            filename: 'index.html',
+            template: "./src/index.html"
       
           }),
     ]

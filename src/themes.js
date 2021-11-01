@@ -1,3 +1,7 @@
+import { main } from "./index";
+import { css } from "./styles/style.css";
+
+
 
 // * Get theme-switchers from the DOM:
 const defaultTheme = document.querySelector('.default-switch')
