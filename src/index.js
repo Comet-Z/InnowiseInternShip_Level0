@@ -22,17 +22,20 @@ document.querySelector('.other-operators')
 
 
 
-function buttonClick(value){
-    if (isNaN(parseInt(value))){
-        handleSymbol(value);
+function buttonClick(value) {
+    // ? If the clicked button is not a number, use the operator logic
+    if(isNaN(parseInt(value))) {
+        handleOperator(value);
+    }
+    else {
+        handleNumber(value);
     }
 
-    else { handleNumber(value); }
-
     rerenderScreen();
+
 }
 
-function handleSymbol(value){
+function handleOperator(value){
     switch (value){
         case "AC":
             buffer = "0";
@@ -55,10 +58,7 @@ function handleSymbol(value){
                 buffer = buffer.substring(0,buffer.length-1); 
             }
             break;
-        case "x2": 
-            Math.pow(buffer, 2)
-            console.log(buffer);
-        
+            
         default:
             handleMath(value);
             break;
@@ -68,32 +68,39 @@ function handleSymbol(value){
 function handleNumber(value){
     if(buffer === "0"){
         buffer = value;
-    } else{
+    } else {
         buffer += value;
     }
 }
 
 function handleMath(value){
-    const internalBuffer = parseInt(buffer);
+    let internalBuffer = parseInt(buffer);
     
     if (currentTotal === 0){
         currentTotal = internalBuffer;
-    }else {
+    }
+    else {
         flushOperation(internalBuffer);
     }
 
     previousOperator = value;
 
     buffer = "0";
-}
+}   
 
 function flushOperation(internalBuffer){
     if(previousOperator === "+"){
         currentTotal += internalBuffer;
-    }else if(previousOperator === "-"){
+    }
+    else if(previousOperator === "-"){
         currentTotal -= internalBuffer;
-    }else if(previousOperator === "x"){
+    }
+    else if(previousOperator === "x"){
         currentTotal *= internalBuffer;  
+    }
+    else if(previousOperator === "x2") {
+        internalBuffer = Math.pow(internalBuffer, 2)
+        console.log(internalBuffer);
     }
     else {
         currentTotal /= internalBuffer;
@@ -101,6 +108,6 @@ function flushOperation(internalBuffer){
 }
 
 
-function rerenderScreen(){
+function rerenderScreen() {
     calcScreen.value = buffer;
 }
