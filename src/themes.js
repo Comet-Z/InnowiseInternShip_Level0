@@ -1,8 +1,6 @@
 import { main } from "./index";
 import { css } from "./styles/style.css";
 
-
-
 // * Get theme-switchers from the DOM:
 const defaultTheme = document.querySelector('.default-switch')
 const lightTheme = document.querySelector('.light-switch')
@@ -29,12 +27,11 @@ lightTheme.addEventListener('click', () => {
         element.classList.remove('dark-theme', 'purple-theme')
         element.classList.add('light-theme') 
 
+        localStorage.clear()
         localStorage.setItem('themeLight', 'light-theme')
-        localStorage.getItem('themeLight')
     })    
     
 })
-
 
 // ? Dark Theme
 darkTheme.addEventListener('click', () => {
@@ -42,8 +39,8 @@ darkTheme.addEventListener('click', () => {
         element.classList.remove('light-theme', 'purple-theme')
         element.classList.add('dark-theme')
 
+        localStorage.clear()
         localStorage.setItem('themeDark', 'dark-theme')
-        localStorage.getItem('themeDark')
     })
     
 })
@@ -53,29 +50,32 @@ purpleTheme.addEventListener('click', () => {
     calcNumbers.forEach(element => {
         element.classList.remove('light-theme', 'dark-theme')
         element.classList.add('purple-theme')
-        
+
+        localStorage.clear()
+        localStorage.setItem('themePurple', 'purple-theme')        
+
     })
 })
 
 
-// ! STORE THEMES IN LOCAL STORAGE :
-// // ? Light Theme :
-// document.onload = function loadLight() {
-//     calcNumbers.forEach(element => {
-//         element.classList.add(localStorage.getItem('themeLight'))
-//     })
-// }
-// // ? Dark Theme :
-// document.onload = function loadDark() {
-//     calcNumbers.forEach(element => {
-//         element.classList.add(localStorage.getItem('themeDark'))
-//     })
-// }
+// * LOAD THEMES FROM LOCAL STORAGE :
+if (localStorage.key(0) == "themeLight") {
+    calcNumbers.forEach(element => {
+        element.classList.remove('dark-theme', 'purple-theme')
+        element.classList.add('light-theme') 
+    })    
+}
 
-// window.onload = function loadPurple() {
-//     calcNumbers.forEach(element => {
-//         element.classList.add(localStorage.getItem('themePurple'))
-//     })
-// }
+else if (localStorage.key(0) == "themeDark") {
+    calcNumbers.forEach(element => {
+        element.classList.remove('light-theme', 'purple-theme')
+        element.classList.add('dark-theme')
+    })
+}
 
-
+else if(localStorage.key(0) == "themePurple") {
+    calcNumbers.forEach(element => {
+        element.classList.remove('light-theme', 'dark-theme')
+        element.classList.add('purple-theme')
+    })
+}
